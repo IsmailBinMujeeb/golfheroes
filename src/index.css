@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line-700;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink-900 text-cream-100 font-sans antialiased;
+  }
+
+  /* Scores, prize amounts and countdowns align in tables and don't jitter on update. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-sage-400 ring-offset-2 ring-offset-ink-900;
+  }
+
+  ::selection {
+    @apply bg-sage-500 text-cream-100;
+  }
+}
+
+@layer components {
+  /* Flat panels separated by hairlines — no floating cards, no drop shadows. */
+  .panel {
+    @apply border border-line-700 bg-ink-800;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

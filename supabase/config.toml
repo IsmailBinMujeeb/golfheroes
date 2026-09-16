@@ -1,0 +1,10 @@
+project_id = "digital-heroes"
+
+[functions.razorpay-create-order]
+verify_jwt = true
+
+[functions.razorpay-verify]
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true
